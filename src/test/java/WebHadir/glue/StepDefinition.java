@@ -274,7 +274,7 @@ public class StepDefinition {
 		
 		@When("^User mencari data karyawan sesuai filter yang telah disesuaikan")
 		public void searchKaryawanRegister() {
-			formRegister.SearchKaryawanRegister(configurationProperties.getCategory(), configurationProperties.getChooseDivisi());
+			formRegister.SearchKaryawanRegister(configurationProperties.getChooseDivisi());
 			extentTest.log(LogStatus.PASS, "User mencari data karyawan sesuai filter yang telah disesuaikan");
 		}
 		
@@ -302,13 +302,13 @@ public class StepDefinition {
 					configurationProperties.getPasswword2(), configurationProperties.getNik4(), configurationProperties.getTipekaryawan2(), configurationProperties.getImei4(), configurationProperties.getChooseDivisi(),
 					configurationProperties.getJamkerja(), configurationProperties.getJammasuk(), configurationProperties.getJamkeluar(), configurationProperties.getLokasi(), configurationProperties.getAbsenpoint(),
 					configurationProperties.getCuti(), configurationProperties.getLembur3());
-			extentTest.log(LogStatus.PASS, "User mengubah data karyawan");
+			extentTest.log(LogStatus.FAIL, "User gagal mengubah data karena gagal upload foto");
 		}
 		@Then("^User berhasil mengubah data")
 		public void getDisplayRegisterPage() {
 			formRegister.displayRegister();
 			assertEquals(configurationProperties.getDisplayRegister(), formRegister.displayRegister());
-			extentTest.log(LogStatus.PASS, "User berhasil mengubah data");
+			extentTest.log(LogStatus.FAIL, "User gagal mengubah data karena gagal upload fotoa");
 		}
 	
 	@After

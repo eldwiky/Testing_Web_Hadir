@@ -160,7 +160,7 @@ private WebDriver driver;
 	@FindBy (xpath = "/html/body/div[2]/div/div[1]/div/div/div[2]/form/button")
 	WebElement btnSubmitUbahDataRegister;
 	
-	@FindBy (css = "#root > div > div.mt--8.container-fluid > div > div > div.alert.alert-success.alert-dismissible.show > span")
+	@FindBy (css = "#root > div > div.mt--8.container-fluid > div > div > div.alert.alert-danger.alert-dismissible.show")
 	WebElement displayRegister;
 	
 	
@@ -221,8 +221,8 @@ private WebDriver driver;
 		driver.switchTo().alert().dismiss();
 	}
 	
-	public void SearchKaryawanRegister(String category, String chooseDivisi) {
-		txtFilterRegister.sendKeys(category, Keys.ENTER);
+	public void SearchKaryawanRegister(String chooseDivisi) {
+		txtFilterRegister.sendKeys("Divisi", Keys.ENTER);
 		try {
 			Thread.sleep(3000);
 		} catch (Exception e) {
